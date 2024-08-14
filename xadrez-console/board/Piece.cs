@@ -14,5 +14,16 @@
             Board = board;
             NumberMoves = 0;
         }
+
+        public void AddNumberMoves()
+        {
+            NumberMoves++;
+        }
+
+        public void RemoveNumberMoves()
+        {
+            NumberMoves--;
+        }
+
     }
 }
