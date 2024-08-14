@@ -7,9 +7,9 @@
         public int NumberMoves { get; set; }
         public Board Board { get; set; }
 
-        public Piece(Position position, Color color, Board board)
+        public Piece(Color color, Board board)
         {
-            Position = position;
+            Position = null;
             Color = color;
             Board = board;
             NumberMoves = 0;
