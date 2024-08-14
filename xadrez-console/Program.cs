@@ -7,18 +7,22 @@ namespace xadrez_console
     {
         private static void Main(string[] args)
         {
-            PositionChess pos = new PositionChess('a', 1);
-            PositionChess pos2 = new PositionChess('c', 7);
+            try
+            {
+                Board board = new Board(8, 8);
 
-            int calc = 'c' - 'a';
+                board.AddPiece(new Tower(Color.black, board), new Position(2, 0));
+                board.AddPiece(new Tower(Color.black, board), new Position(1, 3));
+                board.AddPiece(new King(Color.black, board), new Position(0, 5));
+                board.AddPiece(new King(Color.white, board), new Position(3, 5));
 
-            Console.WriteLine(pos);
-            Console.WriteLine(pos2);
-            Console.WriteLine(calc);
 
-            Console.WriteLine(pos.ToPosition());
-            Console.WriteLine(pos2.ToPosition());
-
+                Screen.PrintBoard(board);
+            }
+            catch (BoardException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
