@@ -1,4 +1,4 @@
-﻿using tabuleiro;
+﻿using board;
 
 namespace xadrez_console
 {
@@ -6,11 +6,10 @@ namespace xadrez_console
     {
         private static void Main(string[] args)
         {
-            Posicao p;
+            Board board = new Board(8, 8);
 
-            p = new Posicao(3, 4);
+            Screen.PrintBoard(board);
 
-            Console.WriteLine("Posição: " + p);
         }
     }
 }
